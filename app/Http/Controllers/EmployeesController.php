@@ -36,6 +36,16 @@ class EmployeesController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request, [
+            'first_name'=> 'required|max:90',
+            'last_name'=> 'required|max:90',
+            'email' => 'required|email',
+            'company_id' => 'required',
+            'phone_number' => 'required'
+        ]);
+
+        Employees::create($request->all());
+        //return admin home page
     }
 
     /**
