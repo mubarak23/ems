@@ -36,6 +36,19 @@ class CompaniesController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request, [
+            'name'=> 'required|max:90',
+            'email' => 'required|email',
+            'website' => 'required',
+        ]);
+
+        if(hasFile('logo')){
+            $request->logo_url = 'cloundinary/test';
+            Companies::create($request->all());
+            //process file
+            //redirect back to home page
+        }
+
     }
 
     /**

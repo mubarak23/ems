@@ -21,6 +21,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::post('/create_employee', [
     'uses' => 'EmployeesController@store',
-    'as'  => 'create',
+    'as'  => 'creat_employee',
+    'middlewarw' => 'auth'
+]);
+
+Route::post('/create_company', [
+    'uses' => 'CompaniesController@store',
+    'as'  => 'creat_company',
     'middlewarw' => 'auth'
 ]);
