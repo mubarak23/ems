@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('content')
-
+@can('users_manage')
 <div class="card">
     <div class="card-header">
         {{ trans('global.create') }} {{ trans('cruds.user.title_singular') }}

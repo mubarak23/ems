@@ -31,6 +31,10 @@ class CompaniesController extends Controller
     public function create()
     {
         //
+        if(!Gate::allows('company.manage')){
+            return \abort(401);
+        }
+        return view('admin.create_company');
 
     }
 
