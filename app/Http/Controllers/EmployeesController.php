@@ -12,9 +12,12 @@ class EmployeesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
         //
+        $employees = Employees::where('company_id', $id)->with('company.employees')->first();
+        return view('admin.employees')->with('employees', $employees);
+        
     }
 
     /**

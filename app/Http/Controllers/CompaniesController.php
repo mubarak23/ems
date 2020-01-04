@@ -15,6 +15,8 @@ class CompaniesController extends Controller
     public function index()
     {
         //
+        $companies = Companies::oderby('id', 'desc')->paginate(5);
+        return view('admin.index')->with('companies', $companies);
     }
 
     /**

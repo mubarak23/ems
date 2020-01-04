@@ -19,10 +19,25 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
+Route::get('/companies', [
+    'uses' => 'CompaniesController@index',
+    'as' => 'compaines_list',
+    'middleware' => 'auth'
+]);
+
+Route::get('company/employeer/{id}/', [
+    'uses' => 'EmployeesController@index',
+    'as' => 'Company_employees',
+    'middleware' => 'auth'
+]);
+
+
+
 Route::post('/create_employee', [
     'uses' => 'EmployeesController@store',
     'as'  => 'creat_employee',
-    'middlewarw' => 'auth'
+    'middleware' => 'auth'
 ]);
 
 Route::post('/create_company', [
