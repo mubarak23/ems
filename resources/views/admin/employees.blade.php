@@ -55,7 +55,7 @@
                             
                             <td>
                                 <a class="btn btn-xs btn-primary" href="{{ route('admin.users.show', $user->id) }}">
-                                    {{ trans('global.view') }}
+                                    show Details
                                 </a>
 
                                 <a class="btn btn-xs btn-info" href="{{ route('admin.users.edit', $user->id) }}">

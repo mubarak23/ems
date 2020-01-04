@@ -3,20 +3,20 @@
 
         <ul class="nav">
             <li class="nav-item">
-                <a href="" class="nav-link">
+                <a href="{{ route("compaines.list") }}" class="nav-link">
                     <i class="nav-icon fas fa-fw fa-tachometer-alt">
 
                     </i>
                      Dashboard 
                 </a>
             </li>
-            @can('users_manage')
+            
                 <li class="nav-item nav-dropdown">
                     <a class="nav-link  nav-dropdown-toggle" href="#">
                         <i class="fa-fw fas fa-users nav-icon">
 
                         </i>
-                         Employees 
+                        Create  Company 
                     </a>
                     <ul class="nav-dropdown-items">
                         <li class="nav-item">
@@ -24,7 +24,7 @@
                                 <i class="fa-fw fas fa-unlock-alt nav-icon">
 
                                 </i>
-                                 Companies 
+                                 Employees
                             </a>
                         </li>
                         <li class="nav-item">

@@ -1,6 +1,5 @@
 @extends('layouts.admin')
 @section('content')
-@can('users_manage')
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
             <a class="btn btn-success" href="">
@@ -11,7 +10,7 @@
 @endcan
 <div class="card">
     <div class="card-header">
-        {{ trans('cruds.user.title_singular') }} {{ trans('global.list') }}
+        List of Compaines
     </div>
 
     <div class="card-body">
@@ -23,16 +22,13 @@
 
                         </th>
                         <th>
-                            {{ trans('cruds.user.fields.id') }}
+                            {{ trans('Id') }}
                         </th>
                         <th>
-                            {{ trans('cruds.user.fields.name') }}
+                            {{ trans('Name') }}
                         </th>
                         <th>
-                            {{ trans('cruds.user.fields.email') }}
-                        </th>
-                        <th>
-                            {{ trans('cruds.user.fields.roles') }}
+                            {{ trans('Email') }}
                         </th>
                         <th>
                             &nbsp;
@@ -54,19 +50,15 @@
                             </td>
                             
                             <td>
-                                <a class="btn btn-xs btn-primary" href="{{ route('admin.users.show', $user->id) }}">
-                                    {{ trans('global.view') }}
+                                <a class="btn btn-xs btn-primary" href="{{ route('company.employees', $company->id) }}">
+                                    Show Employees
                                 </a>
 
-                                <a class="btn btn-xs btn-info" href="{{ route('admin.users.edit', $user->id) }}">
-                                    {{ trans('global.edit') }}
+                                <a class="btn btn-xs btn-info" href="{{ route('company.edit', $company->id) }}">
+                                    Edit
                                 </a>
 
-                                <form action="{{ route('admin.users.destroy', $user->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
-                                    <input type="hidden" name="_method" value="DELETE">
-                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                    <input type="submit" class="btn btn-xs btn-danger" value="{{ trans('global.delete') }}">
-                                </form>
+    
 
                             </td>
 
