@@ -25,7 +25,7 @@ Route::get('/create_company', [
     'middleware' => 'auth'
 ]);
 
-Route::post('cmpany_create', [
+Route::post('/company_store', [
     'uses' => 'CompaniesController@store',
     'as' => 'company.store',
     'middleware' => 'auth'

@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class CompaniesController extends Controller
 {
+
+    public function __constructor(){
+        $this->middleware(['auth']);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -27,7 +31,7 @@ class CompaniesController extends Controller
     public function create()
     {
         //
-        
+
     }
 
     /**
