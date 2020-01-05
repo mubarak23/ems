@@ -18,17 +18,15 @@
             <table class=" table table-bordered table-striped table-hover datatable datatable-User">
                 <thead>
                     <tr>
-                        <th width="10">
-
+                        
+                        <th>
+                            Id
                         </th>
                         <th>
-                            {{ trans('Id') }}
+                            Company Name
                         </th>
                         <th>
-                            {{ trans('Name') }}
-                        </th>
-                        <th>
-                            {{ trans('Email') }}
+                            Email 
                         </th>
                         <th>
                             Actions

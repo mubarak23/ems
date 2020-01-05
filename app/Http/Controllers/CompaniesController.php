@@ -53,11 +53,17 @@ class CompaniesController extends Controller
             'website' => 'required',
         ]);
 
-        if(hasFile('logo')){
+        if($request->hasFile('logo')){
             Cloudder::upload($request->file('logo'));
             $cloudinary_upload = Cloudder::getResult();
-            $request->logo_url = $cloudinary_upload['url'];
-            Companies::create($request->all());
+           // $request->logo_url = $cloudinary_upload['url'];
+            $data = $request->all();
+            $create_company = new Companies();
+            $create_company->name = $data['name'];
+            $create_company->email = $data['email'];
+            $create_company->website = $data['website'];
+            $create_company->logo_url = $cloudinary_upload['url'];
+            $create_company->save();
             //process file
             //redirect back to home page
         }
