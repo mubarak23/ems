@@ -40,12 +40,12 @@
                                 <i class="fa-fw fas fa-user nav-icon">
 
                                 </i>
-                                {{ Users }}
+                                 Users 
                             </a>
                         </li>
                     </ul>
                 </li>
-            @endcan
+           
             <li class="nav-item">
                 <a href="" class="nav-link">
                     <i class="nav-icon fas fa-fw fa-key">

@@ -7,7 +7,7 @@
             </a>
         </div>
     </div>
-@endcan
+
 <div class="card">
     <div class="card-header">
         List of Compaines
@@ -31,12 +31,12 @@
                             {{ trans('Email') }}
                         </th>
                         <th>
-                            &nbsp;
+                            Actions
                         </th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($compaines as $key => $company)
+                    @foreach($companies as $company)
                         <tr>
                             
                             <td>
