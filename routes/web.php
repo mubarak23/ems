@@ -31,7 +31,7 @@ Route::post('/company_store', [
     'middleware' => 'auth'
 ]);
 
-Route::get('/companies', [
+Route::get('/dashboard', [
     'uses' => 'CompaniesController@index',
     'as' => 'compaines.list',
     'middleware' => 'auth'

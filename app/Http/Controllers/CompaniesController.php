@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Companies;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
+use JD\Cloudder\Facades\Cloudder;
 
 class CompaniesController extends Controller
 {
@@ -53,11 +54,14 @@ class CompaniesController extends Controller
         ]);
 
         if(hasFile('logo')){
-            $request->logo_url = 'cloundinary/test';
+            Cloudder::upload($request->file('logo'));
+            $cloudinary_upload = Cloudder::getResult();
+            $request->logo_url = $cloudinary_upload['url'];
             Companies::create($request->all());
             //process file
             //redirect back to home page
         }
+        return redirect()->route('compaines.list')->with('flash_message', 'Company Added Successfully');
 
     }
 
