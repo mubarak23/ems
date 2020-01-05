@@ -12,7 +12,7 @@
             </li>
             
                 <li class="nav-item nav-dropdown">
-                    <a class="nav-link  nav-dropdown-toggle" href="#">
+                    <a class="nav-link  nav-dropdown-toggle" href="{{ route("company.create") }}">
                         <i class="fa-fw fas fa-users nav-icon">
 
                         </i>

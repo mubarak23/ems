@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Companies;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class CompaniesController extends Controller
 {
@@ -31,9 +32,7 @@ class CompaniesController extends Controller
     public function create()
     {
         //
-        if(!Gate::allows('company.manage')){
-            return \abort(401);
-        }
+        
         return view('admin.create_company');
 
     }

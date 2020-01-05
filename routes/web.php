@@ -20,7 +20,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/create_company', [
-    'uses' => 'CompanyController@create',
+    'uses' => 'CompaniesController@create',
     'as' => 'company.create',
     'middleware' => 'auth'
 ]);
