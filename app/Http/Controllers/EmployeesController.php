@@ -48,8 +48,17 @@ class EmployeesController extends Controller
             'phone_number' => 'required'
         ]);
 
-        Employees::create($request->all());
+        //Employees::create($request->all());
         //return admin home page
+        $data = $request->all();
+        $new_employee = New Employees();
+        $new_employee->first_name = $data['first_name'];
+        $new_employee->last_name = $data['last_name'];
+        $new_employee->company_id = $data['company_id'];
+        $new_employee->email = $data['email'];
+        $new_employee->phone_number = $data['phone_number'];
+        $new_employee->save();
+        return \redirect()->route('company.employees', $data['company_id'])->with('flash_message', 'Employee Added Successfully');
     }
 
     /**
