@@ -23,34 +23,43 @@
 
                         </th>
                         <th>
-                            {{ trans('cruds.user.fields.id') }}
+                            Id
                         </th>
                         <th>
-                            {{ trans('cruds.user.fields.name') }}
+                            First Name
                         </th>
                         <th>
-                            {{ trans('cruds.user.fields.email') }}
+                            Last Name
                         </th>
                         <th>
-                            {{ trans('cruds.user.fields.roles') }}
+                           Email
                         </th>
                         <th>
-                            &nbsp;
+                            Phone Number
+                        </th>
+                        <th>
+                        Action 
                         </th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($compaines as $key => $company)
+                    @foreach($employees as  $employee)
                         <tr>
                             
                             <td>
-                                {{ $company->id ?? '' }}
+                                {{ $employee->id ?? '' }}
                             </td>
                             <td>
-                                {{ $company->name ?? '' }}
+                                {{ $employee->first_name ?? '' }}
                             </td>
                             <td>
-                                {{ $company->email ?? '' }}
+                                {{ $employee->last_name ?? '' }}
+                            </td>
+                            <td>
+                                {{ $employee->email ?? '' }}
+                            </td>
+                            <td>
+                                {{ $employee->phone_number ?? '' }}
                             </td>
                             
                             <td>
@@ -58,11 +67,11 @@
                                     show Details
                                 </a>
 
-                                <a class="btn btn-xs btn-info" href="{{ route('admin.users.edit', $user->id) }}">
-                                    {{ trans('global.edit') }}
+                                <a class="btn btn-xs btn-info" href="">
+                                    Assign Task
                                 </a>
 
-                                <form action="{{ route('admin.users.destroy', $user->id) }}" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
+                                <form action="" method="POST" onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
                                     <input type="hidden" name="_method" value="DELETE">
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                     <input type="submit" class="btn btn-xs btn-danger" value="{{ trans('global.delete') }}">
