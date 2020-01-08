@@ -43,6 +43,14 @@ Route::get('company/employeer/{id}/', [
     'middleware' => 'auth'
 ]);
 
+Route::get('company/employees/{id}', [
+    'uses' => 'EmployeesController@create',
+    'as' => 'employees.create',
+    'auth' => 'auth'
+]);
+
+
+
 Route::get('company/{id}', [
     'uses' => 'CompaniesController@edit',
     'as' => 'company.edit',
