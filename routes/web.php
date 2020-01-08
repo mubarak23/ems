@@ -46,10 +46,14 @@ Route::get('company/employeer/{id}/', [
 Route::get('company/employees/{id}', [
     'uses' => 'EmployeesController@create',
     'as' => 'employees.create',
-    'auth' => 'auth'
+    'middleware' => 'auth'
 ]);
 
-
+Route::post('employee/create', [
+    'uses' => 'EmployeesController@store',
+    'as' =>  'employee.store',
+    'middleware' => 'auth'
+]);
 
 Route::get('company/{id}', [
     'uses' => 'CompaniesController@edit',

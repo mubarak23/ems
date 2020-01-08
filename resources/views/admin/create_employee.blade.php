@@ -6,14 +6,25 @@
     </div>
 
     <div class="card-body">
-        <form action="{{ route("company.store") }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route("employee.store") }}" method="POST" enctype="multipart/form-data">
             @csrf
-            <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" class="form-control" value="{{ old('name', isset($user) ? $user->name : '') }}" required>
-                @if($errors->has('name'))
+            <input type="hidden" name="company_id" value="{{ $id }}">
+            <div class="form-group {{ $errors->has('first_name') ? 'has-error' : '' }}">
+                <label for="name">Firrst Name</label>
+                <input type="text" id="first_name" name="first_name" class="form-control" value="{{ old('first_name') }}" required>
+                @if($errors->has('first_name'))
                     <em class="invalid-feedback">
-                        {{ $errors->first('name') }}
+                        {{ $errors->first('first_name') }}
+                    </em>
+                @endif
+                
+            </div>
+            <div class="form-group {{ $errors->has('last_name') ? 'has-error' : '' }}">
+                <label for="name">Last Name</label>
+                <input type="text" id="last_name" name="last_name" class="form-control" value="{{ old('last_name') }}" required>
+                @if($errors->has('last_name'))
+                    <em class="invalid-feedback">
+                        {{ $errors->first('last_name') }}
                     </em>
                 @endif
                 
@@ -28,28 +39,19 @@
                 @endif
                
             </div>
-            <div class="form-group {{ $errors->has('password') ? 'has-error' : '' }}">
-                <label for="password">Logo</label>
-                <input type="file" id="password" name="logo" class="form-control" required>
-                @if($errors->has('logo'))
+           
+            <div class="form-group {{ $errors->has('phone_number') ? 'has-error' : '' }}">
+                <label for="website">Phone Number</label>
+                <input type="text" id="phone_number" name="phone_number" class="form-control" value="{{ old('phone_number') }}" required>
+                @if($errors->has('phone_number'))
                     <em class="invalid-feedback">
-                        {{ $errors->first('logo') }}
-                    </em>
-                @endif
-                
-            </div>
-            <div class="form-group {{ $errors->has('website') ? 'has-error' : '' }}">
-                <label for="website">Webiste</label>
-                <input type="text" id="website" name="website" class="form-control" value="{{ old('website') }}" required>
-                @if($errors->has('website'))
-                    <em class="invalid-feedback">
-                        {{ $errors->first('website') }}
+                        {{ $errors->first('phone_number') }}
                     </em>
                 @endif
                
             </div>
             <div>
-                <input class="btn btn-danger" type="submit" value="Create Company">
+                <input class="btn btn-danger" type="submit" value="Create Employee">
             </div>
         </form>
 
