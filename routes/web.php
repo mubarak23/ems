@@ -55,7 +55,7 @@ Route::post('employee/create', [
     'middleware' => 'auth'
 ]);
 
-Route::get('employee/task/create', [
+Route::post('employee/task/create', [
     'uses' => 'EmployeesController@createTask',
     'as' => 'task.create',
     'middleware' => 'auth'
