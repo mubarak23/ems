@@ -55,6 +55,13 @@ Route::post('employee/create', [
     'middleware' => 'auth'
 ]);
 
+Route::get('employee/delete', [
+    'uses' => 'EmployeesController@destroy',
+    'as' => 'employee.delete',
+    'middleware' => 'auth'
+]);
+
+
 Route::post('employee/task/create', [
     'uses' => 'EmployeesController@createTask',
     'as' => 'task.create',
