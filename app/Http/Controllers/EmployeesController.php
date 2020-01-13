@@ -110,5 +110,7 @@ class EmployeesController extends Controller
     public function destroy(Employees $employees)
     {
         //
+        $delete = Employees::delete($id);
+        
     }
 }
