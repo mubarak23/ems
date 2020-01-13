@@ -2,7 +2,7 @@
 @section('content')
 <div class="card">
     <div class="card-header">
-        Create Company
+        Create Employee
     </div>
 
     <div class="card-body">

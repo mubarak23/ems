@@ -37,7 +37,7 @@ Route::get('/dashboard', [
     'middleware' => 'auth'
 ]);
 
-Route::get('company/employeer/{id}/', [
+Route::get('company/employee/{id}/', [
     'uses' => 'EmployeesController@index',
     'as' => 'company.employees',
     'middleware' => 'auth'

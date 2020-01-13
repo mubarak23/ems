@@ -17,7 +17,7 @@ class EmployeesController extends Controller
         //
         $employees = Employees::where('company_id', $id)->paginate(5);
         //\dd($employees);
-        return view('admin.employees')->with('employees', $employees);
+        return view('admin.employees')->with('employees', $employees)->with('company_id', $id);
         
     }
 

@@ -11,7 +11,7 @@
 @endcan
 <div class="card">
     <div class="card-header">
-        {{ trans('cruds.user.title_singular') }} {{ trans('global.list') }}
+        <a href="{{ route('employees.create', $company_id)}}" class="btn btn-primary">Create Employee</a>
     </div>
 
     <div class="card-body">
