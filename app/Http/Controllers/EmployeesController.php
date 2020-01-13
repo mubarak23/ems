@@ -15,7 +15,8 @@ class EmployeesController extends Controller
     public function index($id)
     {
         //
-        $employees = Employees::where('company_id', $id)->with('company.employees')->first();
+        $employees = Employees::where('company_id', $id)->paginate(5);
+        //\dd($employees);
         return view('admin.employees')->with('employees', $employees);
         
     }
@@ -111,6 +112,6 @@ class EmployeesController extends Controller
     {
         //
         $delete = Employees::delete($id);
-        
+
     }
 }
