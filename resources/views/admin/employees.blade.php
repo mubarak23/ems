@@ -19,9 +19,7 @@
             <table class=" table table-bordered table-striped table-hover datatable datatable-User">
                 <thead>
                     <tr>
-                        <th width="10">
-
-                        </th>
+                        
                         <th>
                             Id
                         </th>
@@ -63,6 +61,10 @@
                             </td>
                             
                             <td>
+                            <button type="button" class="btn btn-primary" 
+                            data-toggle="modal" data-target="#exampleModal">
+                             Launch demo modal
+                            </button>
                                 
                                 <a class="btn btn-xs btn-info" href="">
                                     Assign Task
@@ -71,7 +73,7 @@
                                 <form action="" method="POST" action={{ route('employee.delete')}} onsubmit="return confirm('{{ trans('global.areYouSure') }}');" style="display: inline-block;">
                                     <input type="hidden" name="_method" value="DELETE">
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                    <input type="submit" class="btn btn-xs btn-danger" value="{{ trans('global.delete') }}">
+                                    <input type="submit" class="btn btn-xs btn-danger" value="Delete">
                                 </form>
 
                             </td>
@@ -84,5 +86,25 @@
 
 
     </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
 </div>
 @endsection
