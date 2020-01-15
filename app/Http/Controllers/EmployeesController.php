@@ -62,7 +62,11 @@ class EmployeesController extends Controller
         return \redirect()->route('company.employees', $data['company_id'])->with('flash_message', 'Employee Added Successfully');
     }
 
-    public function createTask(Request $request)
+    public function createTask(int $id){
+        return view('admin.create_task')->with('employee_id', $id);
+    }
+
+    public function storeTask(Request $request)
     {
         $data = $request->all();
         

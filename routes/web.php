@@ -61,9 +61,14 @@ Route::get('employee/delete', [
     'middleware' => 'auth'
 ]);
 
-
-Route::post('employee/task/create', [
+Route::get('task/create/{id}', [
     'uses' => 'EmployeesController@createTask',
+    'uses' => 'task.form',
+    'middleware' => 'auth'
+]);
+
+Route::post('task/store', [
+    'uses' => 'EmployeesController@storeTask',
     'as' => 'task.create',
     'middleware' => 'auth'
 ]);
