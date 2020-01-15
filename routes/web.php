@@ -63,7 +63,7 @@ Route::get('employee/delete', [
 
 Route::get('task/create/{id}', [
     'uses' => 'EmployeesController@createTask',
-    'uses' => 'task.form',
+    'as' => 'task.form',
     'middleware' => 'auth'
 ]);
 
