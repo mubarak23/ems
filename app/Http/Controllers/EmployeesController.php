@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Employees;
+use App\Tasks;
 use Illuminate\Http\Request;
 
 class EmployeesController extends Controller
@@ -69,6 +70,13 @@ class EmployeesController extends Controller
     public function storeTask(Request $request)
     {
         $data = $request->all();
+        $new_task = new Task();
+        $new_task->title = $data['title'];
+        $new_task->employee_id = $data['employee_id'];
+        $new_task->description = $data['description'];
+        $new_task->save();
+        return \redirect()->route('compaines.list');
+
         
     }
 

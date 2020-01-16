@@ -6,7 +6,7 @@
     </div>
 
     <div class="card-body">
-        <form action="{{ route("employee.store") }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route("task.create") }}" method="POST" enctype="multipart/form-data">
             @csrf
             <input type="hidden" name="employee_id" value="{{ $id }}">
             <div class="form-group {{ $errors->has('first_name') ? 'has-error' : '' }}">
